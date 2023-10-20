@@ -11,10 +11,11 @@ import ShoppingCartIcon from '../../components/shopping-cart-icon/shopping-cart-
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 import { useCartContext } from '../../contexts/cart.context';
 import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
 const Navigation = () => {
   const { isCartOpen } = useCartContext();
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const currentUser = useSelector(selectCurrentUser);
 
   return (
     <>
